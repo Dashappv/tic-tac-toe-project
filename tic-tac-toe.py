@@ -20,7 +20,7 @@ def move(board, mark, position):
 # step 3
 def player_move(board):
     position = int(input("What position you wanna play?"))
-    while 0 > position or position > 19 or board[position] == "o":
+    while 0 > position or position > 19 or board[position] == "o" or board[position] == "x":
         print("Please choose another spot")
         position = int(input("What position you wanna play?"))
     return move (board, "x", position)
@@ -28,7 +28,7 @@ def player_move(board):
 # step 4
 def pc_move(board):
     position = randrange(20)
-    while board[position] == 'x':
+    while board[position] == 'x' or board[position] == 'o':
         position = randrange(20)
     return move (board, "o", position)
 
